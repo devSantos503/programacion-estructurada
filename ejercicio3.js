@@ -1,11 +1,15 @@
-import readline from 'node:readline';
+import readline from 'readline';
+
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+  input: process.stdin,
+  output: process.stdout
 });
-rl.question("ingresa horas para convertir a minutos: ", function(horas){
-    horas = Number(horas);
-    let minutos = horas * 60;
-    console.log(`El total de minutos en ${horas} horas es: ${minutos}`);
-    rl.close();
+
+rl.question('Ingrese una longitud en metros: ', (metrosTexto) => {
+  const metros = parseFloat(metrosTexto);
+  const centimetros = metros * 100;
+
+  console.log(`\n${metros} metros equivalen a ${centimetros} centímetros.`);
+
+  rl.close();
 });
